@@ -1,0 +1,19 @@
+
+ [  {
+     "roleId":1,
+    "name":"Naga",
+    "email":"naga@gmail.com'",
+    "role":"Admin",
+    "status":"Active"
+    
+},
+
+{
+    "roleId":2,
+    "name":"Jyothi",
+    "email":"jyothi@gmail.com'",
+    "role":"Manager",
+    "status":"Active"
+    
+}
+]

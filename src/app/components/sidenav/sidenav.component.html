@@ -1,0 +1,16 @@
+
+<mat-sidenav-container class="full-height" autosize="true">
+    <mat-sidenav mode="side" opened [class.menu-close]="collapse" [class.menu-open]="!collapse">     
+       <div mat-menu-item (click)="toggleSidebar()" class="with-icon padded">
+            <mat-icon id="toolbarMenu">chevron_right</mat-icon>&nbsp;
+        </div> 
+        <div mat-menu-item *ngFor="let i of sideMenu" [routerLink]="['/', i.route]" class="with-icon padded" (click)="$event.stopPropagation()">
+            <mat-icon id="toolbarMenu">{{ i.icon }}</mat-icon>&nbsp;
+            <span [hidden]="collapse">{{ i.name}}</span>
+            
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content class="padded">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

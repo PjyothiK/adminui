@@ -1,0 +1,35 @@
+<mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="filter">
+  </mat-form-field>
+  <span>
+    <button mat-icon-button >
+      <mat-icon mat-icon-button color='primary' (click)="create()">add</mat-icon>
+    </button>
+    </span>
+      <button mat-icon-button>
+        <mat-icon>refresh</mat-icon>
+      </button>
+      <div class=" example-container mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns;">
+            <th mat-header-cell class="custom-mat-header-styling tableHeaderCellDiv" *matHeaderCellDef>{{column}}</th>
+            <td mat-cell *matCellDef="let element">{{element[column]}}</td>
+          </ng-container >
+        <ng-container [matColumnDef]="'actions'">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-icon-button >
+                <mat-icon mat-icon-button color='primary' (click)="update(element)" >edit</mat-icon>
+              </button>
+              <button mat-icon-button >
+               <mat-icon mat-icon-button color="warn" (click)="delete(element.roleId)">delete</mat-icon>
+             </button>
+            </td>
+          </ng-container>
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+          <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+        
+        </table>
+       
+      </div>

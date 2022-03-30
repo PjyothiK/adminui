@@ -1,0 +1,41 @@
+
+
+<h1 mat-dialog-title>Update User</h1>
+<div mat-dialog-content>
+  <form [formGroup]="formInstance"> 
+    <div>
+      <mat-form-field class="fullWidth" appearance="outline">
+        <mat-label>User Name </mat-label>
+        <input matInput type="text" name="name" formControlName="name">
+        <mat-error >field required</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mt-5">
+      <mat-form-field class="fullWidth" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="text" name="email" formControlName="email" />
+        <mat-error >field required</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mt-5">
+        <mat-form-field class="fullWidth" appearance="outline">
+          <mat-label>Role</mat-label>
+          <input matInput type="text" name="role" formControlName="role" />
+          <mat-error >field required</mat-error>
+        </mat-form-field>
+      </div>
+     
+      <div class="mt-5">
+        <mat-form-field class="fullWidth" appearance="outline">
+          <mat-label>Status</mat-label>
+          <input matInput type="text" name="status" formControlName="status" />
+          <mat-error >field required</mat-error>
+        </mat-form-field>
+      </div>
+  </form>
+</div>
+<div class="mt-5" mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="update()"
+    cdkFocusInitial>Update</button>
+  <button mat-raised-button mat-dialog-close>cancel</button>
+</div>

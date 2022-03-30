@@ -1,0 +1,15 @@
+
+ [  {
+  "roleId":1,
+    "role":"Admin",
+"description":"Access all"
+    
+},
+
+{
+    "roleId":2,
+    "role":"Manager",
+    "description":"Access only view"
+    
+}
+]
